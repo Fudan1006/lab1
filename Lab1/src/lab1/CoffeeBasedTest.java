@@ -11,6 +11,7 @@ public class CoffeeBasedTest {
 	@Before
 	public void setUp() throws Exception {
 		cb = new CoffeeBased();
+
 	}
 
 	@Test(timeout = 1000)
