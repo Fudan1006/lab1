@@ -48,7 +48,7 @@ public class Main {
 			order = new Espresso();
 			((CoffeeBeverage) order).setSize(disArr[i]);
 			order = new WhipCream(order);
-		} else if (beveStr.equals("decaf latte")) {//add decaf latte
+		} else if (beveStr.equals("decaf mocha")) {//add decaf mocha
 			order = new Decaf();
 			((CoffeeBeverage) order).setSize(disArr[i]);
 			order = new Chocolate(order);
