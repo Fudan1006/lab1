@@ -4,6 +4,7 @@ import java.text.DecimalFormat;
 
 public class Main {
 	public static void main(String[] args) {
+
 		String[] disArr = new String[args.length];
 		for (int j = 0; j < args.length; j++) {
 			disArr[j] = args[j].toLowerCase();
