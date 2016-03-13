@@ -10,15 +10,45 @@ public class Main {
 			disArr[j] = args[j].toLowerCase();
 		}
 
+		double total = 0.0;
+		if (Character.isDigit(disArr[0].charAt(0))) {
+			int s = 0;
+			for (int i = 1; i < disArr.length; i++) {
+				if (disArr[i].equals(";")) {
+					s++;
+					String[] temp = new String[i-s];
+					for (int m = 0; s < i; m++, s++) {
+						temp[m] = disArr[s];
+					}
+					total += calculate(temp);
+				}
+			}
+			s++;
+			String[] temp = new String[disArr.length-s];			
+			for (int m = 0; s < disArr.length; m++, s++) {
+				temp[m] = disArr[s];
+			}
+			total += calculate(temp);
+
+		} else {
+			total = calculate(disArr);
+		}
+		DecimalFormat df = new DecimalFormat(".0");
+		System.out.println("The total cost of your order is: "
+				+ df.format(total));
+	}
+	
+	private static double calculate(String[] disArr) {
 		int i;
 		for (i = 0; i < disArr.length; i++)
 			if (disArr[i].equals("small") || disArr[i].equals("medium")
 					|| disArr[i].equals("large") || disArr[i].equals("grant"))//add grant
 				break;
 
+		
 		if (i >= disArr.length) {
 			System.out.println("Must set a size!");
-			return;
+			return -1;
 		}
 
 		String beveStr;
@@ -27,7 +57,7 @@ public class Main {
 		} else {
 			beveStr = disArr[0];
 		}
-
+		
 		Beverage order;
 		if (beveStr.equals("espresso")) {
 			order = new CoffeeBeverage();
@@ -75,8 +105,8 @@ public class Main {
 			((TeaBeverage) order).setSize(disArr[i]);
 			order = new Milk(order);
 		} else {
-			System.out.println("Illegal input: " + beveStr);
-			return;
+			System.out.println("Illegal beverage input: " + beveStr);
+			return -1;
 		}
 
 		for (i++; i < disArr.length; i++) {
@@ -92,7 +122,8 @@ public class Main {
 				i++;
 				order = new WhipCream(order);
 			} else {
-				System.out.println("Illegal input: " + disArr[i]);
+				System.out.println("Illegal ingredient input: " + disArr[i]);
+				return -1;
 			}
 		}
 
@@ -107,8 +138,6 @@ public class Main {
 		}
 		// and so on...
 
-		DecimalFormat df = new DecimalFormat(".0");
-		System.out.println("The total cost of your order is: "
-				+ df.format(order.cost()));
+		return order.cost();
 	}
 }
