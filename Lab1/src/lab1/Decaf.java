@@ -4,7 +4,7 @@ package lab1;
  * Created by wangxin on 16/3/13.
  */
 public class Decaf extends CoffeeBeverage {
-    private String description;
+    //private String description;
 
     public Decaf() {
         description = "Decaf";
