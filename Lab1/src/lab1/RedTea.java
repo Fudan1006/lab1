@@ -7,9 +7,9 @@ public class RedTea extends TeaBeverage {
 		description = "Red Tea";
 	}
 	
-	public String getDescription() {
-		return description;
-	}
+//	public String getDescription() {
+//		return description;
+//	}
 
 	public double cost() {
 		return super.cost() + 0.8;

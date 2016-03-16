@@ -137,8 +137,6 @@ public class Main {
 //		}
 		if (order instanceof Beverage) {
 			((Beverage)order).getDescription();
-		} else if (order instanceof BeverageWithIngredient) {
-			((BeverageWithIngredient) order).getDescription();
 		}
 		// and so on...
 

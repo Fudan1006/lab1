@@ -7,9 +7,9 @@ public class HouseBlend extends CoffeeBeverage {
 		description = "HouseBlend";
 	}
 	
-	public String getDescription() {
-		return description;
-	}
+//	public String getDescription() {
+//		return description;
+//	}
 
 	public double cost() {
 		return super.cost() + 0.8;
