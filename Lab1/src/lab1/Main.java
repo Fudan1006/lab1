@@ -109,7 +109,7 @@ public class Main {
 		}*/
 		
 		
-			order = beverageStore.creatBeverage(beveStr,disArr[i]);
+			order = beverageStore.createBeverage(beveStr,disArr[i]);
 		if(order==null){
 			System.out.println("Illegal beverage input: " + beveStr);
 			return -1;

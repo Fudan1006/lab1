@@ -3,7 +3,7 @@ package lab1;
 public class BeverageStore {
 	Beverage order = null;
 
-	public Beverage creatBeverage(String type, String size) {//use to decompose the order and create beverage
+	public Beverage createBeverage(String type, String size) {//use to decompose the order and create beverage
 		if (type.equals("espresso")) {
 			order = new Espresso();
 			((CoffeeBeverage) order).setSize(size);
