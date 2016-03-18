@@ -20,6 +20,6 @@ public class Jasmine extends Ingredient {
 	}
 
 	public double cost() {
-		return 0.6 + beverage.cost();
+		return 0.5 + beverage.cost();
 	}
 }
