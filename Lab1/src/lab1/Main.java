@@ -31,7 +31,7 @@ public class Main {
 	        order[i].toArray(array);
 			total += calculate(array);
 		}
-		
+
 
 //		if (Character.isDigit(disArr[0].charAt(0))) {
 //			int s = 0;
@@ -80,7 +80,8 @@ public class Main {
 			beveStr = disArr[0];
 		}
 		
-		Beverage order = beverageStore.creatBeverage(beveStr,disArr[i]);
+
+		Beverage order;
 		/*if (beveStr.equals("espresso")) {
 			order = new CoffeeBeverage();
 			order = new Espresso();
@@ -132,7 +133,8 @@ public class Main {
 		}*/
 		
 		
-			//order = beverageStore.creatBeverage(beveStr,disArr[i]);
+
+			order = beverageStore.creatBeverage(beveStr,disArr[i]);
 		if(order==null){
 			System.out.println("Illegal beverage input: " + beveStr);
 			return -1;
