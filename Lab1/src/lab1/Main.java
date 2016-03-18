@@ -1,37 +1,57 @@
 package lab1;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 
 public class Main {
 	public static void main(String[] args) {
-		String[] disArr = new String[args.length];
-		for (int j = 0; j < args.length; j++) {
-			disArr[j] = args[j].toLowerCase();
+//		String[] disArr = new String[args.length];
+		int num = Character.isDigit(args[0].charAt(0)) ? Integer.parseInt(args[0]) : 1;
+        ArrayList[] order = new ArrayList[num];
+        for (int i = 0; i < num; i ++) {
+        	order[i] = new ArrayList<String>();
+        }
+        num --;
+        int j = Character.isDigit(args[0].charAt(0)) ? 1 : 0;
+		for (; j < args.length; j++) {
+//			disArr[j] = args[j].toLowerCase();
+			if (!args[j].equals(";")) {
+				order[num].add(args[j].toLowerCase());
+			} else {
+				num --;
+			}
 		}
-
+		
 		double total = 0.0;
-		if (Character.isDigit(disArr[0].charAt(0))) {
-			int s = 0;
-			for (int i = 1; i < disArr.length; i++) {
-				if (disArr[i].equals(";")) {
-					s++;
-					String[] temp = new String[i-s];
-					for (int m = 0; s < i; m++, s++) {
-						temp[m] = disArr[s];
-					}
-					total += calculate(temp);
-				}
-			}
-			s++;
-			String[] temp = new String[disArr.length-s];			
-			for (int m = 0; s < disArr.length; m++, s++) {
-				temp[m] = disArr[s];
-			}
-			total += calculate(temp);
-
-		} else {
-			total = calculate(disArr);
+		for (int i = 0; i < order.length; i ++) {
+			String[] array =new String[order[i].size()];
+	        order[i].toArray(array);
+			total += calculate(array);
 		}
+		
+
+//		if (Character.isDigit(disArr[0].charAt(0))) {
+//			int s = 0;
+//			for (int i = 1; i < disArr.length; i++) {
+//				if (disArr[i].equals(";")) {
+//					s++;
+//					String[] temp = new String[i-s];
+//					for (int m = 0; s < i; m++, s++) {
+//						temp[m] = disArr[s];
+//					}
+//					total += calculate(temp);
+//				}
+//			}
+//			s++;
+//			String[] temp = new String[disArr.length-s];			
+//			for (int m = 0; s < disArr.length; m++, s++) {
+//				temp[m] = disArr[s];
+//			}
+//			total += calculate(temp);
+//
+//		} else {
+//			total = calculate(disArr);
+//		}
 		DecimalFormat df = new DecimalFormat(".0");
 		System.out.println("The total cost of your order is: "
 				+ df.format(total));
