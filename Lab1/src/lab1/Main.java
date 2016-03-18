@@ -4,7 +4,10 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Main {
+	static BeverageStore beverageStore ;//=new BeverageStore();
 	public static void main(String[] args) {
+		beverageStore =new BeverageStore();
+
 //		String[] disArr = new String[args.length];
 		int num = Character.isDigit(args[0].charAt(0)) ? Integer.parseInt(args[0]) : 1;
         ArrayList[] order = new ArrayList[num];
@@ -21,7 +24,7 @@ public class Main {
 				num --;
 			}
 		}
-		
+
 		double total = 0.0;
 		for (int i = 0; i < order.length; i ++) {
 			String[] array =new String[order[i].size()];
@@ -56,7 +59,7 @@ public class Main {
 		System.out.println("The total cost of your order is: "
 				+ df.format(total));
 	}
-	
+
 	private static double calculate(String[] disArr) {
 		int i;
 		for (i = 0; i < disArr.length; i++)
@@ -77,8 +80,8 @@ public class Main {
 			beveStr = disArr[0];
 		}
 		
-		Beverage order;
-		if (beveStr.equals("espresso")) {
+		Beverage order = beverageStore.creatBeverage(beveStr,disArr[i]);
+		/*if (beveStr.equals("espresso")) {
 			order = new CoffeeBeverage();
 			order = new Espresso();
 			((CoffeeBeverage) order).setSize(disArr[i]);
@@ -126,8 +129,14 @@ public class Main {
 		} else {
 			System.out.println("Illegal beverage input: " + beveStr);
 			return -1;
+		}*/
+		
+		
+			//order = beverageStore.creatBeverage(beveStr,disArr[i]);
+		if(order==null){
+			System.out.println("Illegal beverage input: " + beveStr);
+			return -1;
 		}
-
 		for (i++; i < disArr.length; i++) {
 			if (disArr[i].equals("chocolate")) {
 				order = new Chocolate(order);
