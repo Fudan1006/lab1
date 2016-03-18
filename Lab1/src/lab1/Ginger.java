@@ -1,6 +1,6 @@
 package lab1;
 
-public class Ginger extends BeverageWithIngredient {
+public class Ginger extends Ingredient {
 	Beverage beverage;
 	
 	public Ginger(Beverage drink) {

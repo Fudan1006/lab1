@@ -1,6 +1,6 @@
 package lab1;
 
-public class Milk extends BeverageWithIngredient {
+public class Milk extends Ingredient {
 //	public Milk(Beverage drink) {
 //		super(drink);
 //		description += " milk";
