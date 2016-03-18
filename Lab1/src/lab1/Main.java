@@ -1,43 +1,43 @@
 package lab1;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 
 public class Main {
-	public static void main(String[] args) {
+	static BeverageStore beverageStore ;//=new BeverageStore();
 
-		String[] disArr = new String[args.length];
-		for (int j = 0; j < args.length; j++) {
-			disArr[j] = args[j].toLowerCase();
+	public static void main(String[] args) {
+		beverageStore =new BeverageStore();
+
+		int num = Character.isDigit(args[0].charAt(0)) ? Integer.parseInt(args[0]) : 1;
+        ArrayList[] order = new ArrayList[num];
+        for (int i = 0; i < num; i ++) {
+        	order[i] = new ArrayList<String>();
+        }
+        num --;
+        int j = Character.isDigit(args[0].charAt(0)) ? 1 : 0;
+		for (; j < args.length; j++) {
+			if (!args[j].equals(";")) {
+				order[num].add(args[j].toLowerCase());
+			} else {
+				num --;
+			}
 		}
 
 		double total = 0.0;
-		if (Character.isDigit(disArr[0].charAt(0))) {
-			int s = 0;
-			for (int i = 1; i < disArr.length; i++) {
-				if (disArr[i].equals(";")) {
-					s++;
-					String[] temp = new String[i-s];
-					for (int m = 0; s < i; m++, s++) {
-						temp[m] = disArr[s];
-					}
-					total += calculate(temp);
-				}
-			}
-			s++;
-			String[] temp = new String[disArr.length-s];			
-			for (int m = 0; s < disArr.length; m++, s++) {
-				temp[m] = disArr[s];
-			}
-			total += calculate(temp);
-
-		} else {
-			total = calculate(disArr);
+		for (int i = 0; i < order.length; i ++) {
+			String[] array =new String[order[i].size()];
+	        order[i].toArray(array);
+			total += calculate(array);
 		}
+
 		DecimalFormat df = new DecimalFormat(".0");
 		System.out.println("The total cost of your order is: "
 				+ df.format(total));
+
+
 	}
-	
+
 	private static double calculate(String[] disArr) {
 		int i;
 		for (i = 0; i < disArr.length; i++)
@@ -57,9 +57,10 @@ public class Main {
 		} else {
 			beveStr = disArr[0];
 		}
-		
+
+
 		Beverage order;
-		if (beveStr.equals("espresso")) {
+		/*if (beveStr.equals("espresso")) {
 			order = new CoffeeBeverage();
 			order = new Espresso();
 			((CoffeeBeverage) order).setSize(disArr[i]);
@@ -107,8 +108,16 @@ public class Main {
 		} else {
 			System.out.println("Illegal beverage input: " + beveStr);
 			return -1;
-		}
+		}*/
+		
+		
+			order = beverageStore.creatBeverage(beveStr,disArr[i]);
 
+
+		if(order==null){
+			System.out.println("Illegal beverage input: " + beveStr);
+			return -1;
+		}
 		for (i++; i < disArr.length; i++) {
 			if (disArr[i].equals("chocolate")) {
 				order = new Chocolate(order);

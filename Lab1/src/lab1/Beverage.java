@@ -1,10 +1,14 @@
 package lab1;
 
-public abstract class Beverage {
+public class Beverage {
 	protected SizeFactor sizeFactor;
 	protected String description;//make description for every subclass
 
-	public abstract double cost();
+	
+	public double cost() {
+		return 0;
+	}
+	
 	public String getDescription(){
 		return description;
 	}
