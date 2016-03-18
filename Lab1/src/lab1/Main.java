@@ -31,33 +31,10 @@ public class Main {
 	        order[i].toArray(array);
 			total += calculate(array);
 		}
-
-
-//		if (Character.isDigit(disArr[0].charAt(0))) {
-//			int s = 0;
-//			for (int i = 1; i < disArr.length; i++) {
-//				if (disArr[i].equals(";")) {
-//					s++;
-//					String[] temp = new String[i-s];
-//					for (int m = 0; s < i; m++, s++) {
-//						temp[m] = disArr[s];
-//					}
-//					total += calculate(temp);
-//				}
-//			}
-//			s++;
-//			String[] temp = new String[disArr.length-s];			
-//			for (int m = 0; s < disArr.length; m++, s++) {
-//				temp[m] = disArr[s];
-//			}
-//			total += calculate(temp);
-//
-//		} else {
-//			total = calculate(disArr);
-//		}
 		DecimalFormat df = new DecimalFormat(".0");
 		System.out.println("The total cost of your order is: "
 				+ df.format(total));
+
 	}
 
 	private static double calculate(String[] disArr) {
@@ -79,7 +56,6 @@ public class Main {
 		} else {
 			beveStr = disArr[0];
 		}
-		
 
 		Beverage order;
 		/*if (beveStr.equals("espresso")) {
@@ -133,8 +109,8 @@ public class Main {
 		}*/
 		
 		
-
 			order = beverageStore.creatBeverage(beveStr,disArr[i]);
+
 		if(order==null){
 			System.out.println("Illegal beverage input: " + beveStr);
 			return -1;
