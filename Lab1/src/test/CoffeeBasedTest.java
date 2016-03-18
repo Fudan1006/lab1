@@ -1,5 +1,7 @@
-package lab1;
+package test;
 
+
+import lab1.CoffeeBased;
 
 import org.junit.Assert;
 import org.junit.Before;

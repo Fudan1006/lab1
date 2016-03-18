@@ -1,4 +1,6 @@
-package lab1;
+package test;
+
+import lab1.TeaBased;
 
 import org.junit.Assert;
 import org.junit.Before;
