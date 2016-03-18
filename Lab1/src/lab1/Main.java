@@ -3,7 +3,9 @@ package lab1;
 import java.text.DecimalFormat;
 
 public class Main {
+	static BeverageStore beverageStore ;//=new BeverageStore();
 	public static void main(String[] args) {
+		beverageStore =new BeverageStore();
 		String[] disArr = new String[args.length];
 		for (int j = 0; j < args.length; j++) {
 			disArr[j] = args[j].toLowerCase();
@@ -14,7 +16,7 @@ public class Main {
 			int s = 1;
 			for (int i = 1; i < disArr.length; i++) {
 				if (disArr[i].equals(";")) {
-					String[] temp = new String[i-s];
+					String[] temp = new String[i - s];
 					for (int m = 0; s < i; m++, s++) {
 						temp[m] = disArr[s];
 
@@ -23,20 +25,19 @@ public class Main {
 				}
 			}
 			s++;
-			String[] temp = new String[disArr.length-s];			
+			String[] temp = new String[disArr.length - s];
 			for (int m = 0; s < disArr.length; m++, s++) {
 				temp[m] = disArr[s];
 			}
 			total += calculate(temp);
-			System.out.println("The total cost of your order is: "
-					+ total);
+			System.out.println("The total cost of your order is: " + total);
 		} else {
 			System.out.println("The total cost of your order is: "
 					+ calculate(disArr));
 		}
-		
+
 	}
-	
+
 	private static double calculate(String[] disArr) {
 		int i;
 		for (i = 0; i < disArr.length; i++)
@@ -58,7 +59,7 @@ public class Main {
 		}
 		
 		Beverage order;
-		if (beveStr.equals("espresso")) {
+		/*if (beveStr.equals("espresso")) {
 			order = new CoffeeBeverage();
 			order = new Espresso();
 			((CoffeeBeverage) order).setSize(disArr[i]);
@@ -106,8 +107,14 @@ public class Main {
 		} else {
 			System.out.println("Illegal beverage input: " + beveStr);
 			return -1;
+		}*/
+		
+		
+			order = beverageStore.creatBeverage(beveStr,disArr[i]);
+		if(order==null){
+			System.out.println("Illegal beverage input: " + beveStr);
+			return -1;
 		}
-
 		for (i++; i < disArr.length; i++) {
 			if (disArr[i].equals("chocolate")) {
 				order = new Chocolate(order);
