@@ -1,6 +1,6 @@
 package lab1;
 
-public class WhipCream extends BeverageWithIngredient {
+public class WhipCream extends Ingredient {
 //	public WhipCream(Beverage drink) {
 //		super(drink);
 //		description += " whip";

@@ -136,8 +136,8 @@ public class Main {
 		 * How do I get the description of each order instead of doing this
 		 * stupid thing forever (except for printing the args)?
 		 */
-//		if (order instanceof BeverageWithIngredient) {
-//			((BeverageWithIngredient) order).getDescription();
+//		if (order instanceof Ingredient) {
+//			((Ingredient) order).getDescription();
 //		} else if (order instanceof Espresso) {
 //			((Espresso) order).getDescription();
 //		}
