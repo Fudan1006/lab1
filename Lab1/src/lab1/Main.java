@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 public class Main {
 	static BeverageStore beverageStore ;//=new BeverageStore();
+
 	public static void main(String[] args) {
 		beverageStore =new BeverageStore();
 
@@ -23,17 +24,22 @@ public class Main {
 			} else {
 				num --;
 			}
+
 		}
+
 
 		double total = 0.0;
 		for (int i = 0; i < order.length; i ++) {
 			String[] array =new String[order[i].size()];
 	        order[i].toArray(array);
 			total += calculate(array);
+
 		}
+
 		DecimalFormat df = new DecimalFormat(".0");
 		System.out.println("The total cost of your order is: "
 				+ df.format(total));
+
 
 	}
 
@@ -56,6 +62,7 @@ public class Main {
 		} else {
 			beveStr = disArr[0];
 		}
+
 
 		Beverage order;
 		/*if (beveStr.equals("espresso")) {
@@ -110,6 +117,7 @@ public class Main {
 		
 		
 			order = beverageStore.creatBeverage(beveStr,disArr[i]);
+
 
 		if(order==null){
 			System.out.println("Illegal beverage input: " + beveStr);
