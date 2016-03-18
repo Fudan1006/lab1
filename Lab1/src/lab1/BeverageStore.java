@@ -4,11 +4,11 @@ public class BeverageStore {
           Beverage order = null;
           public Beverage creatBeverage(String type,String size){
         	  if (type.equals("espresso")) {
-      			order = new CoffeeBeverage();
+      			//order = new CoffeeBeverage();
       			order = new Espresso();
       			((CoffeeBeverage) order).setSize(size);
       		} else if (type.equals("houseblend")) {
-      			order = new CoffeeBeverage();
+      			//order = new CoffeeBeverage();
       			order = new HouseBlend();
       			((CoffeeBeverage) order).setSize(size);
       		} else if (type.equals("mocha")) {
