@@ -1,7 +1,7 @@
+
 package test;
 
 import lab1.TeaBased;
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -23,3 +23,4 @@ public class TeaBasedTest {
 		Assert.assertEquals(0.9, tb.sizeCost("grant"), 0);
 	}
 }
+
