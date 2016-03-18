@@ -6,7 +6,7 @@ public abstract class Ingredient extends Beverage {
 //	private Beverage drink;
 //	//protected String description;
 //
-//	public BeverageWithIngredient(Beverage drink) {
+//	public Ingredient(Beverage drink) {
 //		this.drink = drink;
 //	}
 //	
@@ -14,3 +14,4 @@ public abstract class Ingredient extends Beverage {
 //		return drink.cost();
 //	}
 }
+
