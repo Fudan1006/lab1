@@ -9,15 +9,15 @@ public class Main {
 			disArr[j] = args[j].toLowerCase();
 		}
 
-		double total = 0;
+		double total = 0.0;
 		if (Character.isDigit(disArr[0].charAt(0))) {
-			int s = 1;
+			int s = 0;
 			for (int i = 1; i < disArr.length; i++) {
 				if (disArr[i].equals(";")) {
+					s++;
 					String[] temp = new String[i-s];
 					for (int m = 0; s < i; m++, s++) {
 						temp[m] = disArr[s];
-
 					}
 					total += calculate(temp);
 				}
@@ -28,13 +28,13 @@ public class Main {
 				temp[m] = disArr[s];
 			}
 			total += calculate(temp);
-			System.out.println("The total cost of your order is: "
-					+ total);
+
 		} else {
-			System.out.println("The total cost of your order is: "
-					+ calculate(disArr));
+			total = calculate(disArr);
 		}
-		
+		DecimalFormat df = new DecimalFormat(".0");
+		System.out.println("The total cost of your order is: "
+				+ df.format(total));
 	}
 	
 	private static double calculate(String[] disArr) {
