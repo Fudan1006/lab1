@@ -7,9 +7,9 @@ public class Espresso extends CoffeeBeverage {
 		description = "Esspresso";
 	}
 	
-//	public String getDescription() {
-//		return description;
-//	}
+	public String getDescription() {
+		return description;
+	}
 
 	public double cost() {
 		return super.cost() + 1.0;

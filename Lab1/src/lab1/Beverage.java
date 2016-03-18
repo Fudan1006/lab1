@@ -1,14 +1,10 @@
 package lab1;
 
-public class Beverage {
+public abstract class Beverage {
 	protected SizeFactor sizeFactor;
-	protected String description;//make description for every subclass
-
-
+	protected String description = "Unknown beverage";//make description for every subclass
 	
-	public double cost() {
-		return 0;
-	}
+	public abstract double cost();//make it abstract to enable implement rather than override
 	
 	public String getDescription(){
 		return description;

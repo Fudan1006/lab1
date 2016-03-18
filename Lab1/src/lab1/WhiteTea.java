@@ -6,7 +6,7 @@ public class WhiteTea extends TeaBeverage {
 	public WhiteTea() {
 		description = "White Tea";
 	}
-	
+//	
 //	public String getDescription() {
 //		return description;
 //	}
