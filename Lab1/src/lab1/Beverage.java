@@ -4,6 +4,7 @@ public class Beverage {
 	protected SizeFactor sizeFactor;
 	protected String description;//make description for every subclass
 
+	
 	public double cost() {
 		return 0;
 	}
