@@ -8,9 +8,9 @@ public class BeverageWithIngredient extends Beverage {
 		this.drink = drink;
 	}
 	
-	public String getDescription(){
-		return description;
-	}
+//	public String getDescription(){
+//		return description;
+//	}
 	
 	public double cost() {
 		return drink.cost();
