@@ -12,6 +12,8 @@ public class CoffeeBeverage extends Beverage {
 	}
 
 	public double cost() {
-		return  super.sizeFactor.sizeCost(size);
+
+		return super.sizeFactor.sizeCost(size);
+
 	}
 }

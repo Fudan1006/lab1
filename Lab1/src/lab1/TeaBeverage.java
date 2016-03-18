@@ -12,6 +12,6 @@ public class TeaBeverage extends Beverage {
 	}
 
 	public double cost() {
-		return super.cost() + super.sizeFactor.sizeCost(size);
+		return super.sizeFactor.sizeCost(size);
 	}
 }
