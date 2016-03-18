@@ -20,6 +20,6 @@ public class WhipCream extends BeverageWithIngredient {
 	}
 
 	public double cost() {
-		return 0.6 + beverage.cost();
+		return 0.3 + beverage.cost();
 	}
 }
