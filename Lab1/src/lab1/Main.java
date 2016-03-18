@@ -9,7 +9,6 @@ public class Main {
 	public static void main(String[] args) {
 		beverageStore =new BeverageStore();
 
-//		String[] disArr = new String[args.length];
 		int num = Character.isDigit(args[0].charAt(0)) ? Integer.parseInt(args[0]) : 1;
         ArrayList[] order = new ArrayList[num];
         for (int i = 0; i < num; i ++) {
@@ -18,22 +17,18 @@ public class Main {
         num --;
         int j = Character.isDigit(args[0].charAt(0)) ? 1 : 0;
 		for (; j < args.length; j++) {
-//			disArr[j] = args[j].toLowerCase();
 			if (!args[j].equals(";")) {
 				order[num].add(args[j].toLowerCase());
 			} else {
 				num --;
 			}
-
 		}
-
 
 		double total = 0.0;
 		for (int i = 0; i < order.length; i ++) {
 			String[] array =new String[order[i].size()];
 	        order[i].toArray(array);
 			total += calculate(array);
-
 		}
 
 		DecimalFormat df = new DecimalFormat(".0");
