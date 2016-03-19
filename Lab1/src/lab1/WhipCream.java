@@ -16,7 +16,7 @@ public class WhipCream extends Ingredient {
 	}
 	
 	public String getDescription(){		
-		return beverage.getDescription() + " whip cream";
+		return beverage.getDescription() + " Whip Cream";
 	}
 
 	public double cost() {

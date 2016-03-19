@@ -8,7 +8,7 @@ public class Ginger extends Ingredient {
 	}
 	
 	public String getDescription(){		
-		return beverage.getDescription() + " ginger";
+		return beverage.getDescription() + " Ginger";
 	}
 
 	public double cost() {

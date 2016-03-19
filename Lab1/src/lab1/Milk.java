@@ -16,7 +16,7 @@ public class Milk extends Ingredient {
 	}
 	
 	public String getDescription(){		
-		return beverage.getDescription() + " milk";
+		return beverage.getDescription() + " Milk";
 	}
 
 	public double cost() {

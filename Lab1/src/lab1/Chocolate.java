@@ -16,7 +16,7 @@ public class Chocolate extends Ingredient {
 	}
 	
 	public String getDescription(){		
-		return beverage.getDescription() + " chocolate";
+		return beverage.getDescription() + " Chocolate";
 	}
 
 	public double cost() {
