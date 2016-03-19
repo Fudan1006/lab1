@@ -1,14 +1,6 @@
 package lab1;
 
 public class Chocolate extends Ingredient {
-//	public Chocolate(Beverage drink) {
-//		super(drink);
-//		description += " chocolate";
-//	}
-//
-//	public double cost() {
-//		return 0.3 + super.cost();
-//	}
 	Beverage beverage;
 	
 	public Chocolate(Beverage drink) {
@@ -16,7 +8,7 @@ public class Chocolate extends Ingredient {
 	}
 	
 	public String getDescription(){		
-		return beverage.getDescription() + " chocolate";
+		return beverage.getDescription() + " Chocolate";
 	}
 
 	public double cost() {
