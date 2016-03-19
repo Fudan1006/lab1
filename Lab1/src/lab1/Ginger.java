@@ -14,12 +14,4 @@ public class Ginger extends Ingredient {
 	public double cost() {
 		return 0.6 + beverage.cost();
 	}
-//	public Ginger(Beverage drink) {
-//		super(drink);
-//		description += " ginger";
-//	}
-//	
-//	public double cost() {
-//		return 0.6 + super.cost();
-//	}
 }
