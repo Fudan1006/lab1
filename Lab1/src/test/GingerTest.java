@@ -1,8 +1,11 @@
 package test;
 
-import lab1.Ginger;
-import lab1.GreenTea;
-import lab1.TeaBeverage;
+import lab1.*;
+import org.jmock.Expectations;
+import org.jmock.Mockery;
+import org.jmock.integration.junit4.JUnit4Mockery;
+import org.jmock.lib.concurrent.Synchroniser;
+import org.jmock.lib.legacy.ClassImposteriser;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -14,8 +17,21 @@ public class GingerTest {
     Ginger g0;
     @Before
     public void SetUp() throws Exception{
-        TeaBeverage g = new GreenTea();
-        g.setSize("small");
+        Mockery context = new JUnit4Mockery(){
+            {
+                setImposteriser(ClassImposteriser.INSTANCE);
+                setThreadingPolicy(new Synchroniser());
+            }
+        };
+        GreenTea g = context.mock(GreenTea.class);
+        context.checking(new Expectations(){
+            {
+                oneOf(g).cost();
+                will(returnValue((double)1.2));
+                oneOf(g).getDescription();
+                will(returnValue("Green Tea"));
+            }
+        });
         g0 = new Ginger(g);//ginger tea
     }
 

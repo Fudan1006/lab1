@@ -1,8 +1,12 @@
 package test;
 
-import lab1.CoffeeBeverage;
 import lab1.Espresso;
 import lab1.WhipCream;
+import org.jmock.Expectations;
+import org.jmock.Mockery;
+import org.jmock.integration.junit4.JUnit4Mockery;
+import org.jmock.lib.concurrent.Synchroniser;
+import org.jmock.lib.legacy.ClassImposteriser;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -14,10 +18,22 @@ public class WhipCreamTest {
     WhipCream w;
     @Before
     public void SetUp() throws Exception{
-        CoffeeBeverage c = new Espresso();
-        c.setSize("small");
-        w = new WhipCream(c);//cappuccino
-
+        Mockery context = new JUnit4Mockery(){
+            {
+                setImposteriser(ClassImposteriser.INSTANCE);
+                setThreadingPolicy(new Synchroniser());
+            }
+        };
+        Espresso e = context.mock(Espresso.class);
+        context.checking(new Expectations(){
+            {
+                oneOf(e).cost();
+                will(returnValue((double)1.4));
+                oneOf(e).getDescription();
+                will(returnValue("Espresso"));
+            }
+        });
+        w = new WhipCream(e);//cappuccino
     }
 
     @Test(timeout = 1000)

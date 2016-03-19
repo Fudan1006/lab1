@@ -1,8 +1,12 @@
 package test;
 
 import lab1.Espresso;
+import org.jmock.Expectations;
+import org.jmock.Mockery;
+import org.jmock.integration.junit4.JUnit4Mockery;
+import org.jmock.lib.concurrent.Synchroniser;
+import org.jmock.lib.legacy.ClassImposteriser;
 import org.junit.Assert;
-import lab1.BeverageStore;
 import lab1.Chocolate;
 import org.junit.Before;
 import org.junit.Test;
@@ -14,8 +18,21 @@ public class ChocolateTest {
     Chocolate c0;
     @Before
     public void SetUp() throws Exception{
-        Espresso e = new Espresso();
-        e.setSize("small");
+        Mockery context = new JUnit4Mockery(){
+            {
+                setImposteriser(ClassImposteriser.INSTANCE);
+                setThreadingPolicy(new Synchroniser());
+            }
+        };
+        Espresso e = context.mock(Espresso.class);
+        context.checking(new Expectations(){
+            {
+                oneOf(e).cost();
+                will(returnValue((double)1.4));
+                oneOf(e).getDescription();
+                will(returnValue("Espresso"));
+            }
+        });
         c0 = new Chocolate(e);//mocha
     }
 
