@@ -20,13 +20,13 @@ public class WhiteTeaTest {
     @Test(timeout = 1000)
     public void testCost(){
     	wt.setSize("small");
-    	Assert.assertEquals(1.2, wt.cost(), 0);
+    	Assert.assertEquals(1.2, wt.cost(), 0.001);
     	wt.setSize("medium");
-    	Assert.assertEquals(1.5, wt.cost(), 0);
+    	Assert.assertEquals(1.5, wt.cost(), 0.001);
     	wt.setSize("large");
-    	Assert.assertEquals(1.7, wt.cost(), 0);
+    	Assert.assertEquals(1.7, wt.cost(), 0.001);
     	wt.setSize("grant");
-    	Assert.assertEquals(1.9, wt.cost(), 0);
+    	Assert.assertEquals(1.9, wt.cost(), 0.001);
 
     }
 }
