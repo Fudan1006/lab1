@@ -10,8 +10,10 @@ public class CoffeeBased implements SizeFactor {
 			return 0.7;
 		} else if (size.toLowerCase().equals("large")){
 			return 1.0;
-		} else {
+		} else if (size.toLowerCase().equals("grant")) {
 			return 1.3;
+		} else {
+			return -1;
 		}
 	}
 
