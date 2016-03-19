@@ -1,6 +1,10 @@
 package test;
 
 import lab1.BeverageStore;
+import lab1.CoffeeBeverage;
+import lab1.SizeFactor;
+
+import org.jmock.integration.junit4.JUnit4Mockery;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,7 +14,6 @@ import org.junit.Test;
  */
 public class BeverageStoreTest {
     BeverageStore bs;
-
     @Before
     public void setUp() throws Exception {
         bs = new BeverageStore();
@@ -18,5 +21,7 @@ public class BeverageStoreTest {
 
     @Test(timeout = 1000)
     public void testCreateBeverage() {
+    	Assert.assertEquals("Espresso",bs.createBeverage("espresso", "small").getDescription());
+    	Assert.assertEquals("Mocha Chocolate",bs.createBeverage("mocha", "large").getDescription());
     }
 }

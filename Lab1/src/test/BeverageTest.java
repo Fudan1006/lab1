@@ -1,6 +1,8 @@
 package test;
 
 import lab1.Beverage;
+
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -22,5 +24,6 @@ public class BeverageTest {
 
     @Test(timeout = 1000)
     public void testGetDescription() {
+    	Assert.assertEquals("Unknown beverage",b.getDescription());
     }
 }
