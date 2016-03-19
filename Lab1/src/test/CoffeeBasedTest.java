@@ -16,10 +16,10 @@ public class CoffeeBasedTest {
 
 	@Test(timeout = 1000)
 	public void testSizeCost() {
-		Assert.assertEquals(0.4, cb.sizeCost("small"), 0);
-		Assert.assertEquals(0.7, cb.sizeCost("medium"), 0);
-		Assert.assertEquals(1.0, cb.sizeCost("large"), 0);
-		Assert.assertEquals(1.3, cb.sizeCost("grant"), 0);
+		Assert.assertEquals(0.4, cb.sizeCost("small"), 0.001);
+		Assert.assertEquals(0.7, cb.sizeCost("medium"), 0.001);
+		Assert.assertEquals(1.0, cb.sizeCost("large"), 0.001);
+		Assert.assertEquals(1.3, cb.sizeCost("grant"), 0.001);
 	}
 
 }
