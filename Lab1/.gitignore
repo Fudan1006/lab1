@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 /bin/
 *.classpath
 *.project
+=======
+/bin/
+*.classpath
+*.project
+>>>>>>> refs/remotes/origin/hanlab1

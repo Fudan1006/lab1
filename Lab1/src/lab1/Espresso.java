@@ -2,7 +2,7 @@ package lab1;
 
 public class Espresso extends CoffeeBeverage {	
 	public Espresso() {
-		description = "Esspresso";
+		description = "Espresso";
 	}
 
 
