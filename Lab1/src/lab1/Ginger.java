@@ -15,3 +15,4 @@ public class Ginger extends Ingredient {
 		return 0.6 + beverage.cost();
 	}
 }
+

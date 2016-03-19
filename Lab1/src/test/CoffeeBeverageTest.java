@@ -1,4 +1,5 @@
 package test;
+
 import lab1.CoffeeBeverage;
 import lab1.SizeFactor;
 import org.junit.Assert;

@@ -1,6 +1,5 @@
 package test;
 
-
 import junit.framework.Assert;
 import junit.framework.TestCase;
 import lab1.CoffeeBased;

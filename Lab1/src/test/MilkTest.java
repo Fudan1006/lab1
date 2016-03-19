@@ -1,5 +1,6 @@
 package test;
 
+
 import lab1.Espresso;
 import lab1.Milk;
 import lab1.RedTea;
@@ -64,6 +65,5 @@ public class MilkTest {
     public void testCost() {
         Assert.assertEquals(1.7, m0.cost(),0.001);//the cost of latte
         Assert.assertEquals(1.3, m1.cost(),0.001);//the cost of tea latte
-
     }
 }

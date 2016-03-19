@@ -1,9 +1,6 @@
 package lab1;
 
-
 public class Milk extends Ingredient {
-
-
 	Beverage beverage;
 	
 	public Milk(Beverage drink) {

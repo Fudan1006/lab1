@@ -1,8 +1,6 @@
 package lab1;
 
 public class WhipCream extends Ingredient {
-
-
 	Beverage beverage;
 	
 	public WhipCream(Beverage drink) {

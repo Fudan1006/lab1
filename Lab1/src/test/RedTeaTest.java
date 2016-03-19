@@ -1,6 +1,5 @@
 package test;
 
-
 import junit.framework.Assert;
 import lab1.RedTea;
 
@@ -28,6 +27,5 @@ public class RedTeaTest {
     	Assert.assertEquals(1.5, rt.cost(), 0.001);
     	rt.setSize("grant");
     	Assert.assertEquals(1.7, rt.cost(), 0.001);
-
     }
 }
