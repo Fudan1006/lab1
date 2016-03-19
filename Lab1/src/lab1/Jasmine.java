@@ -1,6 +1,7 @@
 package lab1;
 
 public class Jasmine extends Ingredient {
+
 	Beverage beverage;
 	
 	public Jasmine(Beverage drink) {

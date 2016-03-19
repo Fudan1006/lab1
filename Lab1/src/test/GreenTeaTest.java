@@ -26,5 +26,6 @@ public class GreenTeaTest {
     	Assert.assertEquals(1.7, gt.cost(), 0.001);
     	gt.setSize("grant");
     	Assert.assertEquals(1.9, gt.cost(), 0.001);
+
     }
 }

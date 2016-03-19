@@ -1,5 +1,6 @@
 package test;
 
+
 import junit.framework.Assert;
 import lab1.WhiteTea;
 
@@ -26,5 +27,6 @@ public class WhiteTeaTest {
     	Assert.assertEquals(1.7, wt.cost(), 0);
     	wt.setSize("grant");
     	Assert.assertEquals(1.9, wt.cost(), 0);
+
     }
 }

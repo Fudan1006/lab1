@@ -1,5 +1,6 @@
 package test;
 
+
 import junit.framework.Assert;
 import lab1.Espresso;
 
@@ -27,5 +28,6 @@ public class EspressoTest {
     	Assert.assertEquals(2.0, es.cost(), 0.001);
     	es.setSize("grant");
     	Assert.assertEquals(2.3, es.cost(), 0.001);
+
     }
 }
