@@ -6,8 +6,6 @@ import java.util.ArrayList;
 public class Main {
 	static BeverageStore beverageStore ;//=new BeverageStore();
 	public static void main(String[] args) {
-		beverageStore =new BeverageStore();
-
 		int num = Character.isDigit(args[0].charAt(0)) ? Integer.parseInt(args[0]) : 1;
         ArrayList[] order = new ArrayList[num];
         for (int i = 0; i < num; i ++) {
@@ -58,58 +56,9 @@ public class Main {
 		}
 		
 		Beverage order;
-		/*if (beveStr.equals("espresso")) {
-			order = new CoffeeBeverage();
-			order = new Espresso();
-			((CoffeeBeverage) order).setSize(disArr[i]);
-		} else if (beveStr.equals("houseblend")) {
-			order = new CoffeeBeverage();
-			order = new HouseBlend();
-			((CoffeeBeverage) order).setSize(disArr[i]);
-		} else if (beveStr.equals("mocha")) {
-			order = new Espresso();
-			((CoffeeBeverage) order).setSize(disArr[i]);
-			order = new Chocolate(order);
-		} else if (beveStr.equals("latte")) {
-			order = new Espresso();
-			((CoffeeBeverage) order).setSize(disArr[i]);
-			order = new Milk(order);
-		} else if (beveStr.equals("cappuccino")) {
-			order = new Espresso();
-			((CoffeeBeverage) order).setSize(disArr[i]);
-			order = new WhipCream(order);
-		} else if (beveStr.equals("decaf mocha")) {//add decaf mocha
-			order = new Decaf();
-			((CoffeeBeverage) order).setSize(disArr[i]);
-			order = new Chocolate(order);
-		} else if (beveStr.equals("green tea")) {
-			order = new GreenTea();
-			((TeaBeverage) order).setSize(disArr[i]);
-		} else if (beveStr.equals("red tea")) {
-			order = new RedTea();
-			((TeaBeverage) order).setSize(disArr[i]);
-		} else if (beveStr.equals("white tea")) {
-			order = new WhiteTea();
-			((TeaBeverage) order).setSize(disArr[i]);
-		} else if (beveStr.equals("flower tea")) {
-			order = new GreenTea();
-			((TeaBeverage) order).setSize(disArr[i]);
-			order = new Jasmine(order);
-		} else if (beveStr.equals("ginger tea")) {
-			order = new GreenTea();
-			((TeaBeverage) order).setSize(disArr[i]);
-			order = new Ginger(order);
-		} else if (beveStr.equals("tea latte")) {
-			order = new RedTea();
-			((TeaBeverage) order).setSize(disArr[i]);
-			order = new Milk(order);
-		} else {
-			System.out.println("Illegal beverage input: " + beveStr);
-			return -1;
-		}*/
+		beverageStore = new BeverageStore();	
 		
-		
-			order = beverageStore.createBeverage(beveStr,disArr[i]);
+		order = beverageStore.createBeverage(beveStr,disArr[i]);
 		if(order==null){
 			System.out.println("Illegal beverage input: " + beveStr);
 			return -1;
