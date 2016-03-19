@@ -1,5 +1,6 @@
 package lab1;
 
+
 public class Milk extends Ingredient {
 
 
