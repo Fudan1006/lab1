@@ -1,5 +1,6 @@
 package test;
 
+import lab1.Espresso;
 import org.junit.Assert;
 import lab1.BeverageStore;
 import lab1.Chocolate;
@@ -11,16 +12,16 @@ import org.junit.Test;
  */
 public class ChocolateTest {
     Chocolate c0;
-    BeverageStore bs;
     @Before
     public void SetUp() throws Exception{
-        bs = new BeverageStore();
-        c0 = new Chocolate(bs.createBeverage("espresso","small"));//mocha
+        Espresso e = new Espresso();
+        e.setSize("small");
+        c0 = new Chocolate(e);//mocha
     }
 
     @Test(timeout = 1000)
     public void testGetDescription() {
-        Assert.assertEquals("Esspresso Chocolate", c0.getDescription());//the description of mocha
+        Assert.assertEquals("Espresso Chocolate", c0.getDescription());//the description of mocha
     }
 
     @Test(timeout = 1000)

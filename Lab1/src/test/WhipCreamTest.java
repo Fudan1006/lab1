@@ -22,7 +22,7 @@ public class WhipCreamTest {
 
     @Test(timeout = 1000)
     public void testGetDescription() {
-        Assert.assertEquals("Esspresso Whip Cream", w.getDescription());//the description of cappuccino
+        Assert.assertEquals("Espresso Whip Cream", w.getDescription());//the description of cappuccino
     }
 
     @Test(timeout = 1000)
